@@ -5,51 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Sistema Help Desk</title>
     <meta name="description" content="Panel principal del sistema de gestión de incidentes Help Desk">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h3>Menú de Navegación</h3>
-            <img src="assets/img/logo.png" alt="Logo Help Desk" width="50" height="50">
-            <span>HelpDesk Manager</span>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="reportar.html">Reportar incidente</a></li>
-            <li><a href="tickets.html">Ver tickets</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="Logo Help Desk">
+                <span>HelpDesk Manager</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Dashboard</a></li>
+                    <li><a href="reportar.html">Reportar incidente</a></li>
+                    <li><a href="tickets.html">Ver tickets</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
             <h1>Bienvenido al sistema de gestión de incidentes</h1>
-            <article>
+
+            <div class="card">
                 <h2>¡Hola, usuario!</h2>
                 <p>Este sistema permite registrar, dar seguimiento y resolver incidentes técnicos de manera eficiente. Utilice el menú de navegación para reportar un nuevo incidente o consultar los tickets existentes.</p>
-            </article>
-        </section>
-        <section>
-            <h2>Resumen del sistema</h2>
-            <article>
-                <h3>Estadísticas actuales</h3>
-                <ul>
-                    <li><strong>Tickets abiertos:</strong> 12</li>
-                    <li><strong>En proceso:</strong> 5</li>
-                    <li><strong>Resueltos:</strong> 28</li>
-                    <li><strong>Prioridad alta activa:</strong> 3</li>
-                </ul>
-                <p>Último incidente reportado: <time datetime="2025-03-20">20 de marzo de 2025</time></p>
-            </article>
-            <article>
-                <h3>Próximos pasos</h3>
-                <p>Para reportar un incidente, diríjase a la sección <strong>"Reportar incidente"</strong>. Para ver el listado completo, use <strong>"Ver tickets"</strong>.</p>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <p>© 2026 Sistema Help Desk - Todos los derechos reservados</p>
-        <p>Contacto: rozaeta9178@utm.edu.ec | Tel: +593 99 643 4076</p>
-    </footer>
+            </div>
+
+            <section>
+                <h2>Resumen del sistema</h2>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="number">12</div>
+                        <div class="label">Tickets abiertos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">5</div>
+                        <div class="label">En proceso</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">28</div>
+                        <div class="label">Resueltos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">3</div>
+                        <div class="label">Prioridad alta activa</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Último incidente reportado</h3>
+                    <p><time datetime="2025-03-20">20 de marzo de 2025</time></p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Próximos pasos</h3>
+                    <p>Para reportar un incidente, diríjase a la sección <strong>"Reportar incidente"</strong>. Para ver el listado completo, use <strong>"Ver tickets"</strong>.</p>
+                    <a href="reportar.html" class="btn btn-primary">Reportar incidente</a>
+                    <a href="tickets.html" class="btn btn-secondary">Ver tickets</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Sistema Help Desk - Todos los derechos reservados</p>
+            <p>Contacto: rozaeta9178@utm.edu.ec | Tel: +593 99 643 4076</p>
+        </footer>
+    </div>
 </body>
 </html>

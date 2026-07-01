@@ -5,72 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportar incidente | Help Desk</title>
     <meta name="description" content="Formulario para reportar un nuevo incidente técnico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h3>Menú de Navegación</h3>
-            <img src="assets/img/logo.png" alt="Logo Help Desk" width="50" height="50">
-            <span>HelpDesk Manager</span>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="reportar.html">Reportar incidente</a></li>
-            <li><a href="tickets.html">Ver tickets</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="Logo Help Desk">
+                <span>HelpDesk Manager</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="reportar.html" class="active">Reportar incidente</a></li>
+                    <li><a href="tickets.html">Ver tickets</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
             <h1>Reporte de nuevo incidente</h1>
-            <article>
-                <h2>Complete el formulario</h2>
-                <p>Los campos marcados con <strong>*</strong> son obligatorios.</p>
-                <form action="#" method="post" onsubmit="alert('Incidente reportado (simulación - sin almacenamiento real).'); return false;">
-                    <div>
-                        <label for="titulo">Título del incidente *</label>
-                        <input type="text" id="titulo" name="titulo" required placeholder="Ej. Caída de red en el piso 3">
-                    </div>
-                    <div>
-                        <label for="categoria">Categoría *</label>
-                        <select id="categoria" name="categoria" required>
-                            <option value="">Seleccione una categoría</option>
-                            <option value="red">Red</option>
-                            <option value="hardware">Hardware</option>
-                            <option value="software">Software</option>
-                        </select>
-                    </div>
-                    <fieldset>
-                        <legend>Nivel de prioridad *</legend>
-                        <div>
-                            <input type="radio" id="alta" name="prioridad" value="alta" required>
-                            <label for="alta">Alta</label>
+            <div class="form-container">
+                <div class="card">
+                    <h2 class="card-title">Complete el formulario</h2>
+                    <p>Los campos marcados con <strong>*</strong> son obligatorios.</p>
+                    <form action="#" method="post" onsubmit="alert('Incidente reportado (simulación - sin almacenamiento real).'); return false;">
+                        <div class="form-group">
+                            <label for="titulo">Título del incidente *</label>
+                            <input type="text" id="titulo" name="titulo" class="form-control" required placeholder="Ej. Caída de red en el piso 3">
                         </div>
-                        <div>
-                            <input type="radio" id="media" name="prioridad" value="media">
-                            <label for="media">Media</label>
+                        <div class="form-group">
+                            <label for="categoria">Categoría *</label>
+                            <select id="categoria" name="categoria" class="form-control" required>
+                                <option value="">Seleccione una categoría</option>
+                                <option value="red">Red</option>
+                                <option value="hardware">Hardware</option>
+                                <option value="software">Software</option>
+                            </select>
                         </div>
-                        <div>
-                            <input type="radio" id="baja" name="prioridad" value="baja">
-                            <label for="baja">Baja</label>
+                        <fieldset>
+                            <legend>Nivel de prioridad *</legend>
+                            <div>
+                                <input type="radio" id="alta" name="prioridad" value="alta" required>
+                                <label for="alta">Alta</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="media" name="prioridad" value="media">
+                                <label for="media">Media</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="baja" name="prioridad" value="baja">
+                                <label for="baja">Baja</label>
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción detallada *</label>
+                            <textarea id="descripcion" name="descripcion" class="form-control" rows="5" required placeholder="Explique el problema con el mayor detalle posible..."></textarea>
                         </div>
-                    </fieldset>
-                    <div>
-                        <label for="descripcion">Descripción detallada *</label>
-                        <textarea id="descripcion" name="descripcion" rows="5" cols="40" required placeholder="Explique el problema con el mayor detalle posible..."></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Enviar reporte</button>
-                        <button type="reset">Limpiar formulario</button>
-                    </div>
-                </form>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <p>© 2026 Sistema Help Desk - Todos los derechos reservados</p>
-        <p>Contacto: rozaeta9178@utm.edu.ec | Tel: +593 99 643 4076</p>
-    </footer>
+                        <div class="form-group" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <button type="submit" class="btn btn-primary">Enviar reporte</button>
+                            <button type="reset" class="btn btn-secondary">Limpiar formulario</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 Sistema Help Desk - Todos los derechos reservados</p>
+            <p>Contacto: rozaeta9178@utm.edu.ec | Tel: +593 99 643 4076</p>
+        </footer>
+    </div>
 </body>
 </html>

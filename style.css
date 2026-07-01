@@ -1,0 +1,328 @@
+/* ===== style.css ===== */
+
+/* Variables globales (Design System) */
+:root {
+  --color-primary: #2c3e50;
+  --color-secondary: #3498db;
+  --color-success: #27ae60;
+  --color-danger: #e74c3c;
+  --color-warning: #f1c40f;
+  --color-light: #ecf0f1;
+  --color-dark: #2c3e50;
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius-card: 8px;
+}
+
+/* Reset y box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Layout con CSS Grid ===== */
+.app-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-row: 1 / -1;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1.5rem 1rem;
+}
+
+.sidebar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar nav ul li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenido principal */
+.main-content {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+/* ===== Componentes del UI Kit ===== */
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.1s;
+}
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+.btn-primary:focus {
+  outline: 2px solid #2980b9;
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+.btn-secondary:hover {
+  background-color: #d5dbdb;
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Tarjetas (Cards) */
+.card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* Alertas (Badges) */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.badge-alta {
+  background-color: var(--color-danger);
+  color: #fff;
+}
+.badge-media {
+  background-color: var(--color-warning);
+  color: #333;
+}
+.badge-baja {
+  background-color: var(--color-success);
+  color: #fff;
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-control {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-control:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+  outline: none;
+}
+select.form-control {
+  appearance: auto;
+}
+
+/* ===== Estilos específicos para cada página ===== */
+
+/* Dashboard: tarjetas de resumen */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.stat-card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem;
+  text-align: center;
+}
+.stat-card .number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+.stat-card .label {
+  color: #666;
+}
+
+/* Tabla de tickets (en Dashboard y Tickets) */
+.table-responsive {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Formulario de reporte */
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== Media Queries ===== */
+
+/* Tablets y dispositivos medianos (≤ 1024px) */
+@media (max-width: 1024px) {
+  .app-container {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+/* Móviles y tablets pequeñas (≤ 768px) */
+@media (max-width: 768px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .sidebar {
+    grid-row: 1;
+    padding: 1rem;
+  }
+  .sidebar .logo {
+    margin-bottom: 1rem;
+  }
+  .sidebar nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .sidebar nav ul li {
+    margin-bottom: 0;
+  }
+  .sidebar nav ul li a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-card .number {
+    font-size: 2rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles pequeños (≤ 576px) */
+@media (max-width: 576px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar nav ul li {
+    width: 100%;
+  }
+  .sidebar nav ul li a {
+    text-align: center;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control {
+    font-size: 0.95rem;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+  th, td {
+    padding: 0.4rem 0.6rem;
+  }
+}
