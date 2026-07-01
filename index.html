@@ -1,55 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Sistema Help Desk</title>
-    <meta name="description" content="Panel principal del sistema de gestión de incidentes Help Desk">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Kit - Design System</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h3>Menú de Navegación</h3>
-            <img src="assets/img/logo.png" alt="Logo Help Desk" width="50" height="50">
-            <span>HelpDesk Manager</span>
+  <header>
+    <h1>🧩 Design System – Help Desk</h1>
+    <p>Librería de componentes UI reutilizables</p>
+  </header>
+  <main>
+    <section>
+      <h2>Botones</h2>
+      <div class="component-group">
+        <button class="btn btn-primary">Primario</button>
+        <button class="btn btn-secondary">Secundario</button>
+        <button class="btn btn-danger">Peligro</button>
+        <button class="btn btn-primary" disabled>Deshabilitado</button>
+      </div>
+    </section>
+    <section>
+      <h2>Formularios</h2>
+      <div class="component-group">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Escribe tu nombre" class="form-control">
         </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="reportar.html">Reportar incidente</a></li>
-            <li><a href="tickets.html">Ver tickets</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h1>Bienvenido al sistema de gestión de incidentes</h1>
-            <article>
-                <h2>¡Hola, usuario!</h2>
-                <p>Este sistema permite registrar, dar seguimiento y resolver incidentes técnicos de manera eficiente. Utilice el menú de navegación para reportar un nuevo incidente o consultar los tickets existentes.</p>
-            </article>
-        </section>
-        <section>
-            <h2>Resumen del sistema</h2>
-            <article>
-                <h3>Estadísticas actuales</h3>
-                <ul>
-                    <li><strong>Tickets abiertos:</strong> 12</li>
-                    <li><strong>En proceso:</strong> 5</li>
-                    <li><strong>Resueltos:</strong> 28</li>
-                    <li><strong>Prioridad alta activa:</strong> 3</li>
-                </ul>
-                <p>Último incidente reportado: <time datetime="2025-03-20">20 de marzo de 2025</time></p>
-            </article>
-            <article>
-                <h3>Próximos pasos</h3>
-                <p>Para reportar un incidente, diríjase a la sección <strong>"Reportar incidente"</strong>. Para ver el listado completo, use <strong>"Ver tickets"</strong>.</p>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <p>© 2026 Sistema Help Desk - Todos los derechos reservados</p>
-        <p>Contacto: rozaeta9178@utm.edu.ec | Tel: +593 99 643 4076</p>
-    </footer>
+        <div class="form-group">
+          <label for="prioridad">Prioridad</label>
+          <select id="prioridad" class="form-control">
+            <option value="baja">Baja</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Tarjetas de Tickets</h2>
+      <div class="component-group">
+        <div class="card">
+          <h3 class="card-title">Ticket #101</h3>
+          <p class="card-text">Problema con la impresora en el piso 3.</p>
+          <span class="badge badge-high">Alta</span>
+          <span class="badge badge-medium">Media</span>
+          <span class="badge badge-low">Baja</span>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Ticket #102</h3>
+          <p class="card-text">Solicitud de nuevo software.</p>
+          <span class="badge badge-medium">Media</span>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Alertas / Etiquetas de prioridad</h2>
+      <div class="component-group">
+        <span class="badge badge-high">Alta</span>
+        <span class="badge badge-medium">Media</span>
+        <span class="badge badge-low">Baja</span>
+        <span class="badge badge-info">Info</span>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>UI Kit – Design System para Help Desk | Desarrollado con CSS puro</p>
+  </footer>
 </body>
 </html>
