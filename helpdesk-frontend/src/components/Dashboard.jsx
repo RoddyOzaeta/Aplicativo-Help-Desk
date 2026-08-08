@@ -10,8 +10,8 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getAllTickets()
-        setTickets(data.data || [])
+        const data = await getAllTickets();
+        setTickets(Array.isArray(data) ? data : []);
         setLoading(false)
       } catch (err) {
         setError('Error al cargar los datos. Asegúrate de que el backend esté corriendo.')

@@ -9,8 +9,8 @@ const Tickets = () => {
 
   const loadTickets = async () => {
     try {
-      const data = await getAllTickets()
-      setTickets(data.data || [])
+      const data = await getAllTickets();
+setTickets(Array.isArray(data) ? data : []);   // ✅
       setLoading(false)
     } catch (err) {
       setError('Error al cargar los tickets. Asegúrate de que el backend esté corriendo.')

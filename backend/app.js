@@ -8,11 +8,7 @@ const ticketRoutes = require('./routes/ticketRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: 'https://aplicativo-help-desk.vercel.app',  // ✅ URL de tu frontend
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type']
-}));
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI)
