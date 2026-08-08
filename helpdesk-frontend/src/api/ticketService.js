@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/tickets';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://aplicativo-help-desk.onrender.com';
 
 export const getAllTickets = async () => {
   const res = await fetch(API_BASE);
