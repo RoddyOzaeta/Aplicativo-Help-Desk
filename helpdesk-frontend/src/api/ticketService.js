@@ -1,19 +1,19 @@
 const API_BASE = import.meta.env.VITE_API_URL || 'https://aplicativo-help-desk.onrender.com';
 
 export const getAllTickets = async () => {
-  const res = await fetch(API_BASE);
+  const res = await fetch(`${API_BASE}/api/tickets`);  // ✅
   if (!res.ok) throw new Error('Error al obtener tickets');
   return res.json();
 };
 
 export const getTicketById = async (id) => {
-  const res = await fetch(`${API_BASE}/${id}`);
+  const res = await fetch(`${API_BASE}/api/tickets/${id}`);  // ✅
   if (!res.ok) throw new Error('Ticket no encontrado');
   return res.json();
 };
 
 export const createTicket = async (ticket) => {
-  const res = await fetch(API_BASE, {
+  const res = await fetch(`${API_BASE}/api/tickets`, {  // ✅
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(ticket),
@@ -23,7 +23,7 @@ export const createTicket = async (ticket) => {
 };
 
 export const updateTicket = async (id, updates) => {
-  const res = await fetch(`${API_BASE}/${id}`, {
+  const res = await fetch(`${API_BASE}/api/tickets/${id}`, {  // ✅
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updates),
@@ -33,7 +33,7 @@ export const updateTicket = async (id, updates) => {
 };
 
 export const deleteTicket = async (id) => {
-  const res = await fetch(`${API_BASE}/${id}`, {
+  const res = await fetch(`${API_BASE}/api/tickets/${id}`, {  // ✅
     method: 'DELETE',
   });
   if (!res.ok) throw new Error('Error al eliminar');
